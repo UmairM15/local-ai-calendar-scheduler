@@ -1,0 +1,100 @@
+.calendar-draft-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#ai-sidebar {
+  z-index: 20;
+}
+
+.calendar-draft-event {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2px;
+  min-width: 0;
+  padding: 3px 5px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 2px dashed currentColor;
+  border-radius: 6px;
+  background: rgba(107, 131, 247, 0.18);
+  background: color-mix(in srgb, Canvas 78%, #6b83f7 22%);
+  color: CanvasText;
+  font: inherit;
+  line-height: 1.15;
+  text-align: left;
+  opacity: 0.88;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.calendar-draft-event:hover {
+  opacity: 1;
+}
+
+.calendar-draft-event:focus-visible {
+  outline: 3px solid Highlight;
+  outline-offset: 2px;
+}
+
+.calendar-draft-event--selected {
+  border-style: solid;
+  box-shadow: 0 0 0 2px Highlight;
+  opacity: 1;
+}
+
+.calendar-draft-event__heading {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  min-width: 0;
+}
+
+.calendar-draft-label {
+  flex: none;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 1px 4px;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.calendar-draft-event__title,
+.calendar-draft-event__time {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.calendar-draft-event__title {
+  min-width: 0;
+  font-size: 12px;
+}
+
+.calendar-draft-event__time {
+  font-size: 10px;
+}
+
+.calendar-draft-event--compact {
+  gap: 0;
+  padding-block: 2px;
+}
+
+.calendar-draft-event--compact .calendar-draft-event__time {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .calendar-draft-event {
+    transition:
+      opacity 120ms ease,
+      box-shadow 120ms ease;
+  }
+}
