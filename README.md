@@ -1,3 +1,3 @@
-# WXT + React
+# Local AI Google Calendar Integration
 
-This template should help get you started developing with React in WXT.
+Coming soon.
